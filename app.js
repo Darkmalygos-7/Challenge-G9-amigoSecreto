@@ -8,8 +8,20 @@ function agregarAmigo(){
     }
     amigos.push(amigo);
     limpiar();
+    actualizarAmigos();
+    console.log(amigos);
 }
 
 function limpiar(){
     document.getElementById("amigo").value = '';
+}
+
+function actualizarAmigos(){
+    let lista = document.querySelector(".name-list");
+    lista.innerHTML = "";
+    for (let amigo = 0; amigo < amigos.length; amigo++) {
+        let nuevoAmigo = `<li>${amigos[amigo]}</li>`;
+        lista.innerHTML += nuevoAmigo;
+    }
+
 }
